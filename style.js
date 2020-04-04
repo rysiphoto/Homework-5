@@ -1,71 +1,77 @@
 $(document).ready(function () {
-    var currentTime = moment().format('HH a');
-    var planID = document.querySelector("#nineAM");
-    var pID = document.querySelector("#p-ID");
-    var planTop = document.querySelector("#player-Top");
-
-    var hourDiv = ['#hour9', '#hour10', '#hour11', '#hour12', '#hour13', '#hour14', '#hour15', '#hour16', '#hour17'];
-
-    console.log(hourDiv);
-    console.log(currentTime);
-    console.log(moment().format('dddd'));
-
+    var currentTime = moment().format('HH');
 
     $("#currentDay").append(moment().format('dddd'));
 
-    var colorSch = document.querySelector('#hour').value;
-    console.log(colorSch);
+    var divVal = $(".hour").attr('value');
+    console.log(divVal);
+
+
+
+    $("div.time-past").each(function () {
+
+        if (currentTime > $(this).attr('value')) {
+
+            $(this).addClass("past");
+
+        } if (currentTime == $(this).attr('value')) {
+            $(this).addClass("present");
+        } if (currentTime < $(this).attr('value')) {
+
+            $(this).addClass("future");
+        }
+    });
+
+    console.log("outside for loop");
+    // addclass
 
 
 
 
+    $(this).on('unload', function () {
+        saveSettings();
+        loadSettings();
+    });
 
-    if (colorSch > currentTime) {
-        future.style.backgroundcolor = "green";
+    function loadSettings() {
+        $('#nine').val(JSON.localStorage.nine);
+        $('#ten').val(localStorage.ten);
+        $('#eleven').val(localStorage.eleven);
+        $('noon').val(localStorage.noon);
+        $("one").val(localStorage.one);
+        $("two").val(localStorage.two);
+        $("three").val(localStorage.three);
+        $("four").val(localStorage.four);
+        $("five").val(localStorage.five);
+    }
+
+    function saveSettings() {
+        var nine = document.getElementById("nine").value;
+        var ten = document.getElementById("ten").value;
+        var eleven = document.getElementById("eleven").value;
+        var noon = document.getElementById("noon").value;
+        var one = document.getElementById("one").value;
+        var two = document.getElementById("two").value;
+        var three = document.getElementById("three").value;
+        var four = document.getElementById("four").value;
+        var five = document.getElementById("five").value;
+    }
+    function saveSettings() {
+        localStorage.nine = $('#nine').val();
+        localStorage.ten = $('#ten').val();
+        localStorage.eleven = $('#eleven').val();
+        localStorage.noon = $('#noon').val();
+        localStorage.one = $('#one').val();
+        localStorage.two = $('#two').val();
+        localStorage.three = $('#three').val();
+        localStorage.four = $('#four').val();
+        localStorage.five = $('#five').val();
+
+    }
+
+    $("#saveBtn").on("click", function () {
+        event.preventDefault();
 
 
-    } if (colorSch === currentTime) {
-        red
-
-    } if (colorSch < currentTime) {
-        grey
-    };
-
-
-
-
+    });
 });
-
-
-
-
-    // background of the schedule
-
-
-
-
-
-
-    // $("#hour")function changeClrGreen
-
-    // function changeClrGrey
-
-    // function changeClrRed
-    // if (currentTime) >
-
-
-    //     // if (currentTime > $("#hour.value")) {
-    //    if  $("#hour").val()("click", "text", function (event) {
-    //     $(event.delegateTarget).css("background-color", "green");
-    // });
-    // }
-
-
-    //     .past
-    // append
-
-    //     .present
-    // append
-    //     .future
-    // append
-
