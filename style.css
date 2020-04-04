@@ -1,6 +1,6 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -66,8 +66,10 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 35px;
   transition: all .3s ease-in-out;
+
+
 }
 
 .fa-save {
@@ -77,3 +79,4 @@ textarea{
   justify-content: center;
   margin-top:15px;
 }
+
